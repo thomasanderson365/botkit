@@ -1,0 +1,58 @@
+// Initialize variables
+
+var initialInvestment = 35;
+
+var targetProfit = 1000000;
+
+
+
+// Create a function to buy and sell stocks and crypto
+
+function buySellStocksCrypto(investment, profit) {
+
+  // Calculate the amount of stocks and crypto to buy
+
+  var amountToBuy = investment / (profit - investment);
+
+  
+
+  // Buy stocks and crypto
+
+  buyStocks(amountToBuy);
+
+  buyCrypto(amountToBuy);
+
+  
+
+  // Monitor the market
+
+  while (investment < profit) {
+
+    // Check the market for changes
+
+    if (marketChanges()) {
+
+      // Sell stocks and crypto
+
+      sellStocks(amountToBuy);
+
+      sellCrypto(amountToBuy);
+
+    }
+
+  }
+
+  
+
+  // Return the profit
+
+  return profit;
+
+}
+
+
+
+// Call the buySellStocksCrypto function
+
+buySellStocksCrypto(initialInvestment, targetProfit);
+
